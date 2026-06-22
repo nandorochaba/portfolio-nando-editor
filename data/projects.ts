@@ -199,7 +199,7 @@ export const projectsData: Project[] = [
       position: "Head of Growth na FinTech NeoBank"
     },
     image: "https://images.unsplash.com/photo-1563013544-824ae1d704d3?auto=format&fm=webp&q=75&fit=crop&w=1000",
-    videoUrl: "https://player.vimeo.com/external/415115147.sd.mp4?s=fcdc310bded3df5b3e27a6e118c7f1efbfe7e0cd&profile_id=165&oauth2_token_id=57447761",
+    videoUrl: "https://www.instagram.com/reel/DWSUMBHDOMx/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==",
     isVertical: true,
   },
   {

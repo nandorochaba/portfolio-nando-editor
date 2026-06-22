@@ -58,7 +58,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
       <div 
         ref={cardRef}
         onClick={() => onClick(project.id)}
-        className="group relative cursor-pointer overflow-hidden rounded-[32px] border border-black/15 dark:border-white/15 h-full aspect-[9/16] shadow-xl shadow-black/10 dark:shadow-black/30 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-orange/10 dark:hover:shadow-brand-orange/5 bg-slate-950 flex flex-col justify-end"
+        className="group relative cursor-pointer overflow-hidden rounded-[32px] border border-black/15 dark:border-white/15 w-full max-w-[260px] xs:max-w-[280px] sm:max-w-[300px] md:max-w-[260px] lg:max-w-[270px] xl:max-w-[290px] mx-auto aspect-[9/16] shadow-xl shadow-black/10 dark:shadow-black/30 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-orange/10 dark:hover:shadow-brand-orange/5 bg-slate-950 flex flex-col justify-end"
         style={{ transformStyle: 'preserve-3d' }}
       >
         {/* Fill Background Image */}
