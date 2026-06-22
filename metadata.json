@@ -2,5 +2,7 @@
   "name": "Remix: Portfólio Nando Rocha - Editor de Vídeo",
   "description": "Um portfólio de alto nível focado em Validação e Entrega de Projetos, apresentando estudos de caso detalhados e uma linha do tempo de homologação.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }

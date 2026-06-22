@@ -1,0 +1,28 @@
+/* Custom Global Styles for Nando Rocha Portfolio */
+
+/* Space Grotesk elegant headings */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap');
+
+/* Webkit custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(228, 109, 67, 0.2);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(228, 109, 67, 0.45);
+}
+
+/* Base custom interactive layers config */
+.dark .gradient-bg {
+  --color-bg1: rgb(15, 15, 20);
+  --color-bg2: rgb(10, 10, 12);
+}
