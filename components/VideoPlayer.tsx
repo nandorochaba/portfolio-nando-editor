@@ -218,7 +218,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl, posterImage,
   if (isIframe) {
     return (
       <div 
-        className={`relative rounded-[32px] overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl bg-black group transition-all duration-500 ${isV ? 'aspect-[9/16] max-w-[330px] mx-auto ring-4 ring-slate-800/40 dark:ring-slate-700/30' : 'aspect-video w-full'}`}
+        className={`relative rounded-[32px] overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl bg-black group transition-all duration-500 ${isV ? 'aspect-[9/16] w-full max-w-[270px] xs:max-w-[290px] sm:max-w-[330px] mx-auto ring-4 ring-slate-800/40 dark:ring-slate-700/30' : 'aspect-video w-full'}`}
         id="iframe-video-player"
       >
         {!hasStarted ? (
@@ -261,7 +261,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl, posterImage,
         if (isPlaying) setShowControls(false);
       }}
       onClick={() => togglePlay()}
-      className={`relative rounded-[32px] overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl bg-slate-950 group cursor-pointer select-none transition-all duration-500 ${isV ? 'aspect-[9/16] max-w-[330px] mx-auto ring-4 ring-slate-800/40 dark:ring-slate-700/30' : 'aspect-video w-full'}`}
+      className={`relative rounded-[32px] overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl bg-slate-950 group cursor-pointer select-none transition-all duration-500 ${isV ? 'aspect-[9/16] w-full max-w-[270px] xs:max-w-[290px] sm:max-w-[330px] mx-auto ring-4 ring-slate-800/40 dark:ring-slate-700/30' : 'aspect-video w-full'}`}
       id="custom-html5-video-player"
     >
       {/* Video Element */}

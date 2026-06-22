@@ -65,7 +65,7 @@ const Home: React.FC<HomeProps> = ({ onProjectClick }) => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="flex flex-wrap items-center gap-2 sm:gap-3 mb-10 pb-2"
+            className="flex overflow-x-auto no-scrollbar items-center gap-2 sm:gap-3 mb-10 pb-4 px-6 -mx-6 md:mx-0 md:px-0 md:flex-wrap snap-x snap-mandatory"
           >
             {categories.map((category) => {
               const isActive = selectedCategory === category;
@@ -73,7 +73,7 @@ const Home: React.FC<HomeProps> = ({ onProjectClick }) => {
                 <button
                   key={category}
                   onClick={() => setSelectedCategory(category)}
-                  className={`relative px-5 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300 border cursor-pointer select-none outline-none focus:outline-none z-10 overflow-hidden ${
+                  className={`relative px-5 py-2.5 rounded-full text-xs font-mono font-bold uppercase tracking-wider transition-all duration-300 border cursor-pointer select-none outline-none focus:outline-none z-10 shrink-0 snap-start overflow-hidden ${
                     isActive
                       ? 'text-white border-brand-orange/40'
                       : 'bg-white/40 dark:bg-slate-900/40 text-slate-600 dark:text-slate-400 border-black/5 dark:border-white/5 hover:border-brand-orange/30 hover:text-brand-orange'
