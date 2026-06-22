@@ -10,7 +10,7 @@ interface HomeProps {
   onProjectClick: (id: string) => void;
 }
 
-const categories = ['Todos', 'Comercial', 'Cinematográfico', 'Social Media', 'YouTube'];
+const categories = ['Todos', 'Comercial', 'Cinematográfico', 'Reels / TikTok / Shorts', 'YouTube'];
 
 const Home: React.FC<HomeProps> = ({ onProjectClick }) => {
   const projectsData = useProjects();

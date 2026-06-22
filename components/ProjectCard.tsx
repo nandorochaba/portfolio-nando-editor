@@ -51,6 +51,63 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, onClick }) => {
     }
   };
 
+  const isVertical = project.isVertical || project.category === 'Reels / TikTok / Shorts';
+
+  if (isVertical) {
+    return (
+      <div 
+        ref={cardRef}
+        onClick={() => onClick(project.id)}
+        className="group relative cursor-pointer overflow-hidden rounded-[32px] border border-black/15 dark:border-white/15 h-full aspect-[9/16] shadow-xl shadow-black/10 dark:shadow-black/30 transition-all duration-500 hover:shadow-2xl hover:shadow-brand-orange/10 dark:hover:shadow-brand-orange/5 bg-slate-950 flex flex-col justify-end"
+        style={{ transformStyle: 'preserve-3d' }}
+      >
+        {/* Fill Background Image */}
+        <div className="absolute inset-0 pointer-events-none">
+          <img 
+            src={project.image} 
+            alt={`Visualização do projeto ${project.title}`} 
+            className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105 opacity-80 group-hover:opacity-95"
+            loading="lazy"
+          />
+          {/* Vignette Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent transition-opacity duration-300 opacity-90 group-hover:opacity-100" />
+        </div>
+
+        {/* Play Icon - centered */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/30 backdrop-blur-[1px] pointer-events-none">
+          <div className="w-16 h-16 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-2xl border border-white/20 transition-all duration-300 scale-75 group-hover:scale-100 group-hover:bg-brand-peach">
+            <svg 
+              className="w-7 h-7 fill-current translate-x-0.5" 
+              viewBox="0 0 24 24"
+            >
+              <path d="M8 5v14l11-7z" style={{ fill: 'currentColor' }} />
+            </svg>
+          </div>
+        </div>
+
+        {/* Float bottom Title overlay block */}
+        <div 
+          className="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end text-white z-10 select-none pb-8"
+          style={{ transform: 'translate3d(0, 0, 15px)' }}
+        >
+          <div className="bg-black/50 dark:bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl p-4 flex justify-between items-center transition-all duration-350 group-hover:bg-black/80 group-hover:border-brand-orange/40">
+            <div className="min-w-0 pr-2">
+              <span className="text-[9px] font-mono font-bold tracking-[0.2em] text-brand-orange dark:text-brand-peach uppercase block mb-1">
+                {project.category}
+              </span>
+              <h3 className="text-base font-bold text-white tracking-tight truncate leading-tight">
+                {project.title}
+              </h3>
+            </div>
+            <div className="p-2.5 rounded-xl bg-white/10 border border-white/10 group-hover:bg-brand-orange group-hover:text-white transition-all duration-205 shrink-0">
+              <ArrowUpRight className="w-4 h-4 text-white" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div 
       ref={cardRef}

@@ -122,7 +122,7 @@ export const projectsData: Project[] = [
     title: 'Viral Tech Hacks Series',
     description: 'Cortes ultra-dinâmicos de formato curto para TikTok, Reels e Shorts com retenção recorde e legendas futuristas.',
     longDescription: 'Desenvolvimento e pós-produção de uma série com mais de 30 vídeos curtos para educação em IA. Foco em reter o espectador logo no primeiro segundo usando enquadramentos dinâmicos, emojis 3D animados, efeitos sonoros (SFX) e zoom sutil mas direto a cada bloco de corte.',
-    category: 'Social Media',
+    category: 'Reels / TikTok / Shorts',
     status: ProjectStatus.DELIVERED,
     metrics: [
       { label: 'Visualizações Globais', value: '25M+' },
@@ -140,6 +140,67 @@ export const projectsData: Project[] = [
     ],
     image: "https://images.unsplash.com/photo-1548372290-8d01b6c8e78c?auto=format&fm=webp&q=75&fit=crop&w=1000",
     videoUrl: "https://player.vimeo.com/external/510850877.sd.mp4?s=d94eb3e961be4ed200c92131ee698fc1fbc40d42&profile_id=165&oauth2_token_id=57447761",
+    isVertical: true,
+  },
+  {
+    id: 'street-workout-tiktok',
+    title: 'Street Workout TikTok Power',
+    description: 'Edição de alta adrenalina com batidas sincopadas, efeitos de transição e Sound Design (SFX) amplificado para retenção máxima no TikTok.',
+    longDescription: 'Desenvolvimento de uma edição agressiva para as mídias verticais do TikTok. Focado em rítmica pesada, cortes nos picos de áudio, efeitos visuais com glows rápidos e transições invisíveis que geram loops contínuos — um dos maiores pilares de viralização orgânica do algoritmo do TikTok.',
+    category: 'Reels / TikTok / Shorts',
+    status: ProjectStatus.DELIVERED,
+    metrics: [
+      { label: 'Visualizações no TikTok', value: '5.4M' },
+      { label: 'Taxa de Compartilhamento', value: '12.3%' },
+      { label: 'Salvamentos de Áudio', value: '45K' }
+    ],
+    tech_stack: ['Premiere Pro', 'After Effects', 'Twixtor (Speed Ramping)', 'Audition SFX Master'],
+    architecture_summary: 'Sincronização cirúrgica de impactos físicos com graves encorpados, transições em máscara lateral para simular fluxo ininterrupto e color grading de alto contraste.',
+    validation_steps: [
+      { id: '1', title: 'Análise de Batidas de Áudio & Drop Map', completed: true },
+      { id: '2', title: 'Acelerações & Câmera Lenta (Speed Ramps)', completed: true },
+      { id: '3', title: 'Mixagem de Sound Effects Corporais', completed: true },
+      { id: '4', title: 'Color Grading Estilo "High-Contrast Athletics"', completed: true },
+      { id: '5', title: 'Análise de Loop Fluido de Fim para o Começo', completed: true }
+    ],
+    client_quote: {
+      text: "Minhas visualizações orgânicas quadruplicaram após essa edição. O ritmo dinâmico e o loop sem costuras seguram o público do início ao fim!",
+      author: "Gabriel 'Steel' Santos",
+      position: "Atleta Profissional & Criador de Conteúdo"
+    },
+    image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fm=webp&q=75&fit=crop&w=1000",
+    videoUrl: "https://player.vimeo.com/external/435674703.sd.mp4?s=7dd3210bded3df5b3e27a6e118c7f1efbfe7e0cd&profile_id=165&oauth2_token_id=57447761",
+    isVertical: true,
+  },
+  {
+    id: 'fintech-interactive-shorts',
+    title: 'Fintech Interactive Micro-Shorts',
+    description: 'Motion Graphics dinâmicos e infográficos explicativos adaptados para telas verticais sobre finanças e inteligência artificial.',
+    longDescription: 'Criação de vídeos curtos explicativos focados em converter usuários comuns em Leads qualificados. Apresenta transações de dados financeiros na nuvem traduzidos em gráficos animados modernos de 9:16, zoom digital suave, enquadramento centralizado de alta legibilidade de textos e inserção de mockups tridimensionais.',
+    category: 'Reels / TikTok / Shorts',
+    status: ProjectStatus.DELIVERED,
+    metrics: [
+      { label: 'Taxa de Retenção Completa', value: '81.4%' },
+      { label: 'Cliques no Link (CTR)', value: '8.9%' },
+      { label: 'Novos Leads Gerados', value: '+12.5k' }
+    ],
+    tech_stack: ['After Effects', 'Illustrator (Design de Vetores)', 'Overlord', 'Premiere Pro'],
+    architecture_summary: 'Desenho de layouts focados em margens de segurança das redes, legendas em bloco único colorido no centro e aceleração constante usando curvas de velocidade orgânicas.',
+    validation_steps: [
+      { id: '1', title: 'Planejamento de Margens de Segurança de Interface', completed: true },
+      { id: '2', title: 'Importação e Rigging de Vetores UI', completed: true },
+      { id: '3', title: 'Animação de Legendas Coloridas Centralizadas', completed: true },
+      { id: '4', title: 'Efeitos de Cursor e Click Animado', completed: true },
+      { id: '5', title: 'Otimização com Áudio Limpo por IA', completed: true }
+    ],
+    client_quote: {
+      text: "Conseguimos passar conceitos complexos em apenas 45 segundos de forma super leve e profissional.",
+      author: "Beatriz Ramos",
+      position: "Head of Growth na FinTech NeoBank"
+    },
+    image: "https://images.unsplash.com/photo-1563013544-824ae1d704d3?auto=format&fm=webp&q=75&fit=crop&w=1000",
+    videoUrl: "https://player.vimeo.com/external/415115147.sd.mp4?s=fcdc310bded3df5b3e27a6e118c7f1efbfe7e0cd&profile_id=165&oauth2_token_id=57447761",
+    isVertical: true,
   },
   {
     id: 'volvo-safety-reimagined',
@@ -167,24 +228,23 @@ export const projectsData: Project[] = [
   },
   {
     id: 'youtube-case',
-    title: 'Youtube',
-    description: 'Edição de vídeo otimizada e de alta performance para engajamento e retenção no YouTube.',
-    longDescription: 'Pós-produção avançada focada em dinâmicas de engajamento prontas para o algoritmo do YouTube. Utiliza técnicas modernas de cortes rítmicos rápidos nas introduções, efeitos sonoros imersivos, animações de títulos dinâmicos, transições fluidas e zoom estratégico para manter a atenção de todos os usuários ativa ao longo de cada tomada.',
-    category: 'YouTube',
+    title: 'Instagram Reels Viral',
+    description: 'Edição ultra-dinâmica e de alta performance criada especificamente para engajamento no Instagram Reels e TikTok.',
+    longDescription: 'Pós-produção avançada focada em dinâmicas de altíssima engajamento e retenção prontas para o algoritmo do Instagram Reels, TikTok e Shorts. Utiliza transições de forte impacto visual, áudio imersivo, design inovador de legendas síncronas e hooks impactantes para manter a atenção visual contínua de ponta a ponta.',
+    category: 'Reels / TikTok / Shorts',
     status: ProjectStatus.DELIVERED,
     metrics: [
-      { label: 'Retenção de Audiência', value: '78%' },
-      { label: 'Cliques no Card (CTR)', value: '14.2%' },
-      { label: 'Visualizações Iniciais', value: '250K+' }
+      { label: 'Engajamento de Shorts', value: '94%' },
+      { label: 'Cliques no Link na Bio', value: '18.5k' },
+      { label: 'Visualizações Finais', value: '450K+' }
     ],
-    tech_stack: ['Premiere Pro', 'After Effects', 'Photoshop (Thumbnails)', 'Audition Sound FX'],
-    architecture_summary: 'Desenvolvimento de uma narrativa ágil com ganchos visuais e sonoros nos primeiros 5 segundos, cortes dinâmicos ritmados com o fluxo de fala e design gráfico personalizado de alta atenção.',
+    tech_stack: ['Premiere Pro', 'After Effects', 'Photoshop (Covers)', 'Audition Sound FX'],
+    architecture_summary: 'Construção de roteiro encurtado com zoom-punch a cada frase relevante, legendização inteligente, trilhas vibrantes em loop, e design estético ultra saturado.',
     validation_steps: [
-      { id: '1', title: 'Roteiro de Retenção & Hook Primáro', completed: true },
-      { id: '2', title: 'Cortes Dinâmicos & Zoom de Ênfase', completed: true },
-      { id: '3', title: 'Integração de Sound Effects e B-Roll', completed: true },
-      { id: '4', title: 'Animações de Títulos e Call to Action', completed: true },
-      { id: '5', title: 'Color Grading & Otimização Geral', completed: true }
+      { id: '1', title: 'Hook Inicial Dinâmico (0-3s)', completed: true },
+      { id: '2', title: 'Sincronização de Entonação e Swish', completed: true },
+      { id: '3', title: 'Design de Elementos HUD Retentivos', completed: true },
+      { id: '4', title: 'Otimização de Export em High Bitrate Vertical', completed: true }
     ],
     client_quote: {
       text: "A dinâmica de edição prendeu meu público do início ao fim do vídeo promocional. O melhor resultado técnico de engajamento que já tivemos no canal!",
@@ -192,6 +252,7 @@ export const projectsData: Project[] = [
       position: "Creator & Host do Canal TechVlog"
     },
     image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?auto=format&fm=webp&q=75&fit=crop&w=1000",
-    videoUrl: "https://www.youtube.com/watch?v=LBehMxq3H9g",
+    videoUrl: "https://www.instagram.com/reel/DWSUMBHDOMx/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==",
+    isVertical: true,
   }
 ];

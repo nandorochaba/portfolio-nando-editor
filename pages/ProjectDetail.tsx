@@ -64,6 +64,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = ({ project, onBack }) => {
                   videoUrl={project.videoUrl || "https://player.vimeo.com/external/371433846.sd.mp4?s=236da2f3c0227125dc5f2f518e9868fc9a22cc37&profile_id=139&oauth2_token_id=57447761"} 
                   posterImage={project.image} 
                   title={project.title} 
+                  isVertical={project.isVertical}
                 />
               </motion.div>
 

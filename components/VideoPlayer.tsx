@@ -5,9 +5,10 @@ interface VideoPlayerProps {
   videoUrl: string;
   posterImage: string;
   title: string;
+  isVertical?: boolean;
 }
 
-export const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl, posterImage, title }) => {
+export const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl, posterImage, title, isVertical }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   
@@ -26,11 +27,25 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl, posterImage,
 
   const isIframe = videoUrl.includes('youtube.com') || 
                   videoUrl.includes('youtu.be') || 
-                  (videoUrl.includes('vimeo.com') && !videoUrl.includes('.mp4'));
+                  (videoUrl.includes('vimeo.com') && !videoUrl.includes('.mp4')) ||
+                  videoUrl.includes('instagram.com') ||
+                  videoUrl.includes('tiktok.com');
 
-  // Get embeddable URL for YouTube / Vimeo
+  const isV = isVertical || 
+              videoUrl.includes('instagram.com') || 
+              videoUrl.includes('tiktok.com') || 
+              videoUrl.includes('/shorts/') || 
+              videoUrl.includes('/reel/');
+
+  // Get embeddable URL for YouTube / Vimeo / Instagram / TikTok
   const getEmbedUrl = (url: string) => {
     if (url.includes('youtube.com') || url.includes('youtu.be')) {
+      if (url.includes('/shorts/')) {
+        const shortsMatch = url.match(/\/shorts\/([^/?#\s]+)/);
+        if (shortsMatch && shortsMatch[1]) {
+          return `https://www.youtube.com/embed/${shortsMatch[1]}?autoplay=1&rel=0`;
+        }
+      }
       const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
       const match = url.match(regExp);
       let videoId = (match && match[2].length === 11) ? match[2] : null;
@@ -49,6 +64,16 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl, posterImage,
       const match = url.match(regExp);
       const videoId = match ? match[1] : null;
       return videoId ? `https://player.vimeo.com/video/${videoId}?autoplay=1` : url;
+    }
+    if (url.includes('instagram.com')) {
+      const match = url.match(/(?:\/p\/|\/reel\/|\/reels\/)([^/?#\s]+)/);
+      const shortcode = match ? match[1] : null;
+      return shortcode ? `https://www.instagram.com/reel/${shortcode}/embed` : url;
+    }
+    if (url.includes('tiktok.com')) {
+      const match = url.match(/\/video\/(\d+)/);
+      const videoId = match ? match[1] : null;
+      return videoId ? `https://www.tiktok.com/embed/v2/${videoId}` : url;
     }
     return url;
   };
@@ -193,7 +218,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl, posterImage,
   if (isIframe) {
     return (
       <div 
-        className="relative aspect-video rounded-[32px] overflow-hidden border border-black/5 dark:border-white/10 shadow-2xl bg-black group"
+        className={`relative rounded-[32px] overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl bg-black group transition-all duration-500 ${isV ? 'aspect-[9/16] max-w-[330px] mx-auto ring-4 ring-slate-800/40 dark:ring-slate-700/30' : 'aspect-video w-full'}`}
         id="iframe-video-player"
       >
         {!hasStarted ? (
@@ -236,7 +261,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoUrl, posterImage,
         if (isPlaying) setShowControls(false);
       }}
       onClick={() => togglePlay()}
-      className="relative aspect-video rounded-[32px] overflow-hidden border border-black/5 dark:border-white/10 shadow-2xl bg-slate-950 group cursor-pointer select-none"
+      className={`relative rounded-[32px] overflow-hidden border border-black/10 dark:border-white/10 shadow-2xl bg-slate-950 group cursor-pointer select-none transition-all duration-500 ${isV ? 'aspect-[9/16] max-w-[330px] mx-auto ring-4 ring-slate-800/40 dark:ring-slate-700/30' : 'aspect-video w-full'}`}
       id="custom-html5-video-player"
     >
       {/* Video Element */}

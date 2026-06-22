@@ -34,6 +34,7 @@ export interface Project {
   };
   image: string;
   videoUrl?: string;
+  isVertical?: boolean;
 }
 
 export interface TimelineEvent {
