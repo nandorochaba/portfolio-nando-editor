@@ -26,7 +26,12 @@ const Hero: React.FC = () => {
             <div className="relative">
               <div className="w-14 h-14 rounded-[20px] bg-gradient-to-br from-brand-orange via-brand-peach to-transparent p-[1px]">
                 <div className="w-full h-full rounded-[19px] overflow-hidden bg-white dark:bg-slate-950 flex items-center justify-center transition-colors duration-500">
-                  <span className="text-xl font-bold text-brand-orange dark:text-white">N</span>
+                  <img 
+                    src="https://i.postimg.cc/HVNMk57w/avatar.png" 
+                    alt="Nando Rocha" 
+                    className="w-full h-full object-cover" 
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
               </div>
               <div className="absolute -bottom-0.5 -right-0.5 w-4 h-4 bg-emerald-500 rounded-full border-4 border-slate-50 dark:border-[#0a0a0f] shadow-lg shadow-emerald-500/40 animate-pulse transition-colors duration-500" />
